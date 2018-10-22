@@ -9,26 +9,56 @@
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
     <script src="index.js"></script>
 </head>
+
 <body>
     <header>
-    <h1 class="heading">Assignment 1</h1>
+        <h1 class="heading text-center">Assignment 1</h1>
     </header>
-    <main>
-        <aside>
-            <nav>
-                    <p>List of Repositories</p>
-                    <ul>
-                        <li></li>
-                    </ul>
-            </nav>
-        </aside>
-        <section class="login">
-            
-        </section>
-        <section class="create-issue">
-
-        </section>
+    <main class="container">
+        <div class="row">
+            <section class="login col">
+                <form name="login" onsubmit="getRepoByUsers(event)">
+                    <fieldset>
+                            <legend>List Your Repo</legend>
+                            <p>
+                              <label for="input">User Name</label>
+                              <input type="text" id="input" placeholder="DeepanP" value="DeepanP">
+                            </p>
+                            <input type="submit" value="submit">
+                    </fieldset>
+                </form>
+            </section>
+            <section class="create-issue" hidden>
+                <form name="createissue"  onsubmit="createIssuesForRepo()">
+                    <fieldset>
+                            <label for="select">Example select</label>
+                            <select id="select">
+                            <option value="">Choose...</option>
+                            <optgroup label="Option group 1">
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                                <option value="">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Option group 2">
+                                <option value="">Option 4</option>
+                                <option value="">Option 5</option>
+                                <option value="">Option 6</option>
+                            </optgroup>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="textarea">Example textarea</label>
+                            <textarea id="textarea" rows="3"></textarea>
+                        </p>
+                        <p>
+                            <input type="submit" value="create issues">
+                        </p>
+                </fieldset>
+            <form>
+            </section>
+        </div>
     </main>
-    
+
 </body>
+
 </html>
