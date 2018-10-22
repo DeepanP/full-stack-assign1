@@ -1,1 +1,14 @@
 @import 'bootstrap.css';
+
+.repo-list li{
+    display: inline-block;
+    margin: 10px;
+    padding : 5px;
+    border: 1px solid cyan;
+    background: #ccc;
+    text-transform: uppercase;
+}
+
+.repo-list li > span{
+    padding-right: 5px;
+}
