@@ -1,0 +1,24 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "Assignment given by stack route , to integrate github repo by username and display repo listing and new issue creation functionalities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepanP/full-stack-assign1.git"
+  },
+  "keywords": [
+    "assignment1",
+    "stackroute",
+    "github"
+  ],
+  "author": "deepan palaniyappan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeepanP/full-stack-assign1/issues"
+  },
+  "homepage": "https://github.com/DeepanP/full-stack-assign1#readme"
+}
