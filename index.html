@@ -14,7 +14,30 @@
     <header>
         <h1 class="heading text-center">Assignment 1</h1>
     </header>
-    <main class="container">
+    <div id="loading">
+            <img src="assets/loading.svg" alt="Loading spinner">
+          </div>
+          <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Auth0 - JavaScript</a>
+          
+                    <button class="btn btn-primary btn-margin">
+                        Home
+                    </button>
+          
+                    <button id="btn-login" class="btn btn-primary btn-margin">
+                        Log In
+                    </button>
+          
+                    <button id="btn-logout" class="btn btn-primary btn-margin">
+                        Log Out
+                    </button>
+          
+                  </div>
+                </div>
+              </nav>
+    <main class="container content">
         <div class="row text-center">
             <section class="login col">
                 <form name="login" onsubmit="getRepoByUsers(event)">
@@ -48,8 +71,7 @@
                             <input type="text" id="issueTitle" placeholder="title" value="">
                         </p>
                         <p>
-                            <label for="textarea">Example textarea</label>
-                            <textarea id="textarea" rows="3"></textarea>
+                            <textarea id="issueDesc" rows="3" placeholder="Enter your issue" ></textarea>
                         </p>
                         <p>
                             <input type="submit" value="create issues">
@@ -61,7 +83,7 @@
     </main>
 
 </body>
-<script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+<script src="http://cdn.auth0.com/js/lock/11.0.0/lock.min.js"></script>
 <script src="index.js"></script>
 
 </html>
