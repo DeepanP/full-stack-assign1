@@ -87,10 +87,11 @@ function renderRepoList(result) {
 function createIssueByUrl(owner,reponame){
     postissuesUrl = generateUrl(createIssueUrl,{'owner':owner,repo:reponame});
     document.getElementById('issueTextContainer').removeAttribute('hidden');
+    document.getElementById('repo-name').innerHTML(reponame);
 }
 
-function submitIssue(){
-    
+function submitIssue(event){
+    event.preventDefault();
     var data = {
         "title": "Found a bug",
         "body": "I'm having a problem with this.",

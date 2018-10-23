@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,42 +15,53 @@
         <h1 class="heading text-center">Assignment 1</h1>
     </header>
     <main class="container">
-        <div class="row">
+        <div class="row text-center">
             <section class="login col">
                 <form name="login" onsubmit="getRepoByUsers(event)">
                     <fieldset>
-                            <legend>List Your Repo</legend>
-                            <p>
-                              <label for="gitUserName">User Name</label>
-                              <input type="text" id="gitUserName" placeholder="Git User Name" value="">
-                            </p>
+                        <legend>List Your Repo</legend>
+                        <p>
+                            <input type="text" id="gitUserName" placeholder="Git User Name" value="">
                             <input type="submit" id="gitUserNameSubmit" value="submit">
+                        </p>
+
                     </fieldset>
                 </form>
             </section>
         </div>
         <div class="row" id="issueContainer" hidden>
-            <section class="create-issue col" >
-                <p><label for="select">List of Repos</label>
+            <section class="create-issue col">
+                <p>
+                    <label for="select">List of Repos</label>
                     <ul class="repo-list" id="repoList">
                     </ul>
                 </p>
             </section>
-            <section class="col" id="issueTextContainer" hidden>
-                <p>Create Issue For:<span id="repo-name"></span></p>
-                <p>
-                    <label for="textarea">Example textarea</label>
-                    <textarea id="textarea" rows="3"></textarea>
-                </p>
-                <p>
-                    <input type="submit" onclick="submitIssue()" value="create issues">
-                </p>
+            <section class="col">
+                <section class="row" id="issueTextContainer" hidden>
+                    <p class="col-12">Create Issue For:
+                        <span id="repo-name"></span>
+                    </p>
+                    <form class="col-12" name="issues" onsubmit="submitIssue(event)">
+
+                        <p>
+                            <input type="text" id="issueTitle" placeholder="title" value="">
+                        </p>
+                        <p>
+                            <label for="textarea">Example textarea</label>
+                            <textarea id="textarea" rows="3"></textarea>
+                        </p>
+                        <p>
+                            <input type="submit" value="create issues">
+                        </p>
+                    </form>
+                </section>
             </section>
-            
         </div>
     </main>
 
 </body>
 <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
 <script src="index.js"></script>
+
 </html>
