@@ -4,11 +4,19 @@
     display: inline-block;
     margin: 10px;
     padding : 5px;
-    border: 1px solid cyan;
-    background: #ccc;
+    border: 1px solid #ccc;
     text-transform: uppercase;
 }
 
 .repo-list li > span{
-    padding-right: 5px;
+    padding: 5px;
+}
+
+.repo-list li > button{
+    float: right;
+    background: #ccc;
+}
+.repo-list li > button.active{
+    background: #666;
+    color: white;
 }

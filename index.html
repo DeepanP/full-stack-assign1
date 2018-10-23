@@ -38,25 +38,24 @@
                 </div>
               </nav>
     <main class="container content">
-        <div class="row text-center">
-            <section class="login col">
+        <div class="row text-center justify-content-center">
+            <section class="login col col-lg-3 align-self-center">
                 <form name="login" onsubmit="getRepoByUsers(event)">
                     <fieldset>
                         <legend>List Your Repo</legend>
-                        <p>
-                            <input type="text" id="gitUserName" placeholder="Git User Name" value="">
-                            <input type="submit" id="gitUserNameSubmit" value="submit">
+                        <p class="form-label-group btn-group">
+                            <input type="text" class="form-control" id="gitUserName" placeholder="Git User Name" value="">
+                            <input type="submit" class="btn btn-secondary" id="gitUserNameSubmit" value="submit">
                         </p>
-
                     </fieldset>
                 </form>
             </section>
         </div>
         <div class="row" id="issueContainer" hidden>
             <section class="create-issue col">
-                <p>
+                <p class="form-label-group">
                     <label for="select">List of Repos</label>
-                    <ul class="repo-list" id="repoList">
+                    <ul class="repo-list list-group" id="repoList">
                     </ul>
                 </p>
             </section>
@@ -67,14 +66,14 @@
                     </p>
                     <form class="col-12" name="issues" onsubmit="submitIssue(event)">
 
-                        <p>
-                            <input type="text" id="issueTitle" placeholder="title" value="">
+                        <p class="form-label-group">
+                            <input type="text" class="form-control" id="issueTitle" placeholder="title" value="">
                         </p>
-                        <p>
-                            <textarea id="issueDesc" rows="3" placeholder="Enter your issue" ></textarea>
+                        <p class="form-label-group">
+                            <textarea id="issueDesc" class="form-control" rows="3" placeholder="Enter your issue" ></textarea>
                         </p>
-                        <p>
-                            <input type="submit" value="create issues">
+                        <p class="form-label-group">
+                            <input type="submit" class="btn btn-secondary" value="create issues">
                         </p>
                     </form>
                 </section>

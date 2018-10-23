@@ -7,4 +7,4 @@ run npm install
 
 Steps: 2
 
-run npm start - it will open in 8088 port
+run npm start - it will open in 8080 port

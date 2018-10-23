@@ -1,7 +1,7 @@
 
 var AUTH0_CLIENT_ID='pI2hZe0tAKEDUcq7KP7pO98pzVF54V6D';
 var AUTH0_DOMAIN='assignment1.auth0.com';
-var AUTH0_CALLBACK_URL=location.href+'/?loginCallback';
+var AUTH0_CALLBACK_URL=location.href+'?loginCallback';
 window.addEventListener('load', function() {
     var content = document.querySelector('.content');
     var loadingSpinner = document.getElementById('loading');
@@ -91,7 +91,7 @@ var getRepoUrl = { url: 'https://api.github.com/users/:owner/repos', tokens:['ow
 var createIssueUrl = { url: 'https://api.github.com/repos/:owner/:repo/issues', tokens:['owner','repo']};
 var postissuesUrl = '';
 var submitButton = document.getElementById('gitUserNameSubmit');
-
+var lastRepoClicked;
 function generateUrl(urlObject,values){
     let newUrlObject = urlObject.url;
     urlObject.tokens.map((item)=>{
@@ -130,15 +130,19 @@ function getRepoByUsers(event){
 
 function createRepoItem(repo){
     var li = document.createElement('li');
+    var liattr = document.createAttribute('class');
+    liattr.value = 'list-group-item';
+    li.setAttribute('class','list-group-item');
     var spanItem = document.createElement('span');
     spanItem.innerHTML = repo.name;
     var attr = document.createAttribute('class');
     attr.value = repo.name;
     var buttonItem = document.createElement('button');
     buttonItem.innerText='+ issue';
-    buttonItem.addEventListener('click',()=>{
+    buttonItem.addEventListener('click',(event)=>{
         var innerRepo = repo;
-        createIssueByUrl(innerRepo.owner.login, innerRepo.name);
+        var scopEvent = event;
+        createIssueByUrl(innerRepo.owner.login, innerRepo.name, scopEvent);
     });
     li.appendChild(spanItem);
     li.appendChild(buttonItem);
@@ -152,10 +156,18 @@ function renderRepoList(result) {
     document.getElementById('issueContainer').removeAttribute('hidden');
 }
 
-function createIssueByUrl(owner,reponame){
+function createIssueByUrl(owner,reponame, event){
+    if(!lastRepoClicked && !event.target.classList.length){
+        lastRepoClicked = event;
+    }else{
+        lastRepoClicked.target.classList.remove('active');
+        lastRepoClicked = event;
+    }
+    event.target.classList.add('active');
     postissuesUrl = generateUrl(createIssueUrl,{'owner':owner,repo:reponame});
     document.getElementById('issueTextContainer').removeAttribute('hidden');
-    document.getElementById('repo-name').innerHTML(reponame);
+    var spantext = document.getElementById('repo-name');
+    spantext.innerHTML=reponame;
 }
 
 function submitIssue(event){
