@@ -2,6 +2,7 @@
 var AUTH0_CLIENT_ID='pI2hZe0tAKEDUcq7KP7pO98pzVF54V6D';
 var AUTH0_DOMAIN='assignment1.auth0.com';
 var AUTH0_CALLBACK_URL=location.href+'?loginCallback';
+var Access_token = 'b9c56d2d822fcc2f9a9f97e00f6b6f3756d05e88';
 window.addEventListener('load', function() {
     var content = document.querySelector('.content');
     var loadingSpinner = document.getElementById('loading');
@@ -123,8 +124,10 @@ function getRepoByUsers(event){
         submitButton.disabled = false;
     },(error)=>{
         console.log(error);
+        alert('Verify console for error');
     }).catch(function(error){
         console.log(error);
+        alert('Verify console for error');
     });
 }
 
@@ -174,14 +177,7 @@ function submitIssue(event){
     event.preventDefault();
     var data = {
         "title": document.getElementById('issueTitle').value,
-        "body": document.getElementById('issueDesc').value,
-        "assignees": [
-          userName
-        ],
-        "milestone": 1,
-        "labels": [
-          "bug"
-        ]
+        "body": document.getElementById('issueDesc').value
     };
     var fetchOption = {
         method: "POST", 
@@ -192,11 +188,20 @@ function submitIssue(event){
         },
         body: JSON.stringify(data), // body data type must match "Content-Type" header
     };
+    postissuesUrl = postissuesUrl+'?&access_token='+Access_token;
     fetchData(postissuesUrl,fetchOption).then((result)=>{
         console.log(result);
+        if(result.message){
+            alert(result.message);
+        }
+        else{
+            alert('Issue created successfully');
+        }
     },(error)=>{
         console.log(error);
+        alert('Verify console for error');
     }).catch(function(error){
         console.log(error);
+        alert('Verify console for error');
     });
 }

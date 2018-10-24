@@ -17,7 +17,7 @@
     <div id="loading">
             <img src="assets/loading.svg" alt="Loading spinner">
           </div>
-          <nav class="navbar navbar-default">
+          <!--<nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
                     <a class="navbar-brand" href="#">Auth0 - JavaScript</a>
@@ -36,7 +36,7 @@
           
                   </div>
                 </div>
-              </nav>
+              </nav>-->
     <main class="container content">
         <div class="row text-center justify-content-center">
             <section class="login col col-lg-3 align-self-center">
@@ -52,19 +52,19 @@
             </section>
         </div>
         <div class="row" id="issueContainer" hidden>
-            <section class="create-issue col">
+            <section class="col-sm-12 create-issue col-md-6">
                 <p class="form-label-group">
                     <label for="select">List of Repos</label>
                     <ul class="repo-list list-group" id="repoList">
                     </ul>
                 </p>
             </section>
-            <section class="col">
+            <section class="col-sm-12 col-md-6">
                 <section class="row" id="issueTextContainer" hidden>
-                    <p class="col-12">Create Issue For:
+                    <p class="col-sm-12">Create Issue For:
                         <span id="repo-name"></span>
                     </p>
-                    <form class="col-12" name="issues" onsubmit="submitIssue(event)">
+                    <form class="col-sm-12" name="issues" onsubmit="submitIssue(event)">
 
                         <p class="form-label-group">
                             <input type="text" class="form-control" id="issueTitle" placeholder="title" value="">
